@@ -1,0 +1,1208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Newton Mwirebua — MBA · Project & Operations Analyst</title>
+<meta name="description" content="Portfolio of Newton Mugambi Mwirebua — MBA candidate, project planner, and operations analyst based in Hamden, CT." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg: #0b0a08;
+    --bg-soft: #14110d;
+    --surface: #1a1611;
+    --surface-2: #221d16;
+    --border: rgba(245, 185, 66, 0.14);
+    --border-strong: rgba(245, 185, 66, 0.32);
+    --gold: #f5b942;
+    --gold-bright: #ffd166;
+    --gold-soft: rgba(245, 185, 66, 0.12);
+    --text: #f3ede1;
+    --text-muted: #9b9285;
+    --text-dim: #6b6458;
+    --display: "Fraunces", "Times New Roman", serif;
+    --body: "Outfit", -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--body);
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    overflow-x: hidden;
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Background atmosphere */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 20% 0%, rgba(245, 185, 66, 0.08), transparent 50%),
+      radial-gradient(ellipse at 80% 100%, rgba(245, 185, 66, 0.05), transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      radial-gradient(circle at 1px 1px, rgba(245, 185, 66, 0.04) 1px, transparent 0);
+    background-size: 32px 32px;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.6;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ============ NAVIGATION ============ */
+  .nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: rgba(11, 10, 8, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+    transition: all 0.3s ease;
+  }
+
+  .nav-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 1.1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-logo {
+    font-family: var(--display);
+    font-weight: 500;
+    font-size: 1.25rem;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    text-decoration: none;
+  }
+  .nav-logo span { color: var(--gold); font-style: italic; }
+
+  .nav-links {
+    display: flex;
+    gap: 0.4rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    display: inline-block;
+    padding: 0.55rem 1.1rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    transition: all 0.25s ease;
+    position: relative;
+  }
+
+  .nav-links a:hover {
+    color: var(--text);
+  }
+
+  .nav-links a.active {
+    color: var(--gold);
+    border-color: var(--gold);
+    box-shadow:
+      0 0 0 1px var(--gold-soft),
+      0 0 24px rgba(245, 185, 66, 0.35),
+      inset 0 0 12px rgba(245, 185, 66, 0.08);
+    background: rgba(245, 185, 66, 0.04);
+  }
+
+  .nav-toggle {
+    display: none;
+    background: none;
+    border: 1px solid var(--border);
+    color: var(--gold);
+    padding: 0.5rem 0.8rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.2rem;
+  }
+
+  /* ============ HERO ============ */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 8rem 0 4rem;
+    position: relative;
+  }
+
+  .hero-content {
+    max-width: 900px;
+  }
+
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    color: var(--gold);
+    font-size: 0.85rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 1.8rem;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.1s forwards;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    width: 32px;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  .hero h1 {
+    font-family: var(--display);
+    font-size: clamp(2.5rem, 7vw, 5.5rem);
+    line-height: 1.02;
+    letter-spacing: -0.03em;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+    opacity: 0;
+    animation: fadeUp 0.9s ease 0.2s forwards;
+  }
+  .hero h1 .italic {
+    font-style: italic;
+    font-weight: 300;
+    color: var(--gold);
+  }
+
+  .hero-subtitle {
+    font-size: clamp(1.05rem, 1.6vw, 1.3rem);
+    color: var(--text-muted);
+    max-width: 620px;
+    margin-bottom: 2.5rem;
+    line-height: 1.7;
+    opacity: 0;
+    animation: fadeUp 0.9s ease 0.3s forwards;
+  }
+  .hero-subtitle strong { color: var(--text); font-weight: 500; }
+
+  .hero-cta {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: fadeUp 0.9s ease 0.4s forwards;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.95rem 1.8rem;
+    border-radius: 8px;
+    font-family: var(--body);
+    font-weight: 500;
+    font-size: 0.95rem;
+    text-decoration: none;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    letter-spacing: 0.01em;
+  }
+
+  .btn-primary {
+    background: var(--gold);
+    color: #1a1206;
+    border-color: var(--gold);
+  }
+  .btn-primary:hover {
+    background: var(--gold-bright);
+    box-shadow: 0 8px 30px rgba(245, 185, 66, 0.35);
+    transform: translateY(-2px);
+  }
+
+  .btn-ghost {
+    background: transparent;
+    color: var(--text);
+    border-color: var(--border-strong);
+  }
+  .btn-ghost:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+    background: var(--gold-soft);
+  }
+
+  .hero-meta {
+    margin-top: 4rem;
+    display: flex;
+    gap: 3rem;
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: fadeUp 0.9s ease 0.5s forwards;
+  }
+  .hero-meta-item {
+    border-left: 2px solid var(--gold);
+    padding-left: 1rem;
+  }
+  .hero-meta-item .label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--text-dim);
+    margin-bottom: 0.3rem;
+  }
+  .hero-meta-item .value {
+    font-family: var(--display);
+    font-size: 1.1rem;
+    color: var(--text);
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ============ SECTIONS ============ */
+  section {
+    padding: 6rem 0;
+    position: relative;
+  }
+
+  .section-head {
+    margin-bottom: 4rem;
+    max-width: 720px;
+  }
+
+  .section-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    color: var(--gold);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 1rem;
+  }
+  .section-eyebrow::before {
+    content: '';
+    width: 24px;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  .section-title {
+    font-family: var(--display);
+    font-size: clamp(2rem, 4.5vw, 3.5rem);
+    line-height: 1.1;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+  }
+  .section-title em {
+    font-style: italic;
+    color: var(--gold);
+    font-weight: 300;
+  }
+
+  .section-lead {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+  }
+
+  /* ============ ABOUT ============ */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .about-text p {
+    color: var(--text-muted);
+    margin-bottom: 1.2rem;
+    font-size: 1.05rem;
+    line-height: 1.8;
+  }
+  .about-text p:first-child::first-letter {
+    font-family: var(--display);
+    font-size: 3.5rem;
+    float: left;
+    line-height: 0.85;
+    margin-right: 0.5rem;
+    color: var(--gold);
+    font-weight: 500;
+  }
+
+  .about-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .about-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--gold), transparent);
+  }
+  .about-card h3 {
+    font-family: var(--display);
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+  }
+  .about-card ul {
+    list-style: none;
+  }
+  .about-card li {
+    padding: 0.8rem 0;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.95rem;
+  }
+  .about-card li:last-child { border-bottom: none; }
+  .about-card li .k {
+    color: var(--text-dim);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+  .about-card li .v {
+    color: var(--text);
+    font-weight: 400;
+    text-align: right;
+  }
+
+  /* ============ PROJECTS / EXPERIENCE ============ */
+  .timeline {
+    display: grid;
+    gap: 1.5rem;
+  }
+
+  .project-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 200px 1fr auto;
+    gap: 2rem;
+    align-items: start;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  .project-card:hover {
+    border-color: var(--border-strong);
+    background: var(--surface-2);
+    transform: translateY(-2px);
+  }
+  .project-card::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 3px;
+    background: var(--gold);
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.4s ease;
+  }
+  .project-card:hover::before { transform: scaleY(1); }
+
+  .project-period {
+    font-family: var(--display);
+    font-style: italic;
+    color: var(--gold);
+    font-size: 0.95rem;
+    letter-spacing: 0.02em;
+    padding-top: 0.3rem;
+  }
+
+  .project-body h3 {
+    font-family: var(--display);
+    font-size: 1.45rem;
+    font-weight: 500;
+    margin-bottom: 0.4rem;
+    letter-spacing: -0.01em;
+  }
+  .project-body .org {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+    font-weight: 400;
+  }
+  .project-body ul {
+    list-style: none;
+  }
+  .project-body li {
+    color: var(--text-muted);
+    padding: 0.35rem 0 0.35rem 1.3rem;
+    position: relative;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+  .project-body li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+  }
+
+  .project-tags {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    align-items: flex-end;
+  }
+  .tag {
+    display: inline-block;
+    padding: 0.3rem 0.7rem;
+    background: var(--gold-soft);
+    color: var(--gold);
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    border: 1px solid var(--border);
+    white-space: nowrap;
+  }
+
+  /* ============ RESEARCH ============ */
+  .research-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .research-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 2.2rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  .research-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--border-strong);
+  }
+  .research-card .icon {
+    width: 48px;
+    height: 48px;
+    background: var(--gold-soft);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    color: var(--gold);
+    font-size: 1.4rem;
+  }
+  .research-card h3 {
+    font-family: var(--display);
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin-bottom: 0.4rem;
+  }
+  .research-card .meta {
+    color: var(--gold);
+    font-size: 0.85rem;
+    font-style: italic;
+    margin-bottom: 1rem;
+  }
+  .research-card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.65;
+  }
+
+  /* ============ INSIGHTS ============ */
+  .insights-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .insight-card {
+    background: linear-gradient(180deg, var(--surface) 0%, var(--bg-soft) 100%);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 2.5rem 2rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+  .insight-card:hover {
+    border-color: var(--border-strong);
+    transform: translateY(-3px);
+  }
+  .insight-card .num {
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 4rem;
+    color: var(--gold);
+    opacity: 0.3;
+    line-height: 1;
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+  }
+  .insight-card h3 {
+    font-family: var(--display);
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    position: relative;
+  }
+  .insight-card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+  /* ============ RESUME ============ */
+  .resume-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+
+  .resume-block h3 {
+    font-family: var(--display);
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.7rem;
+    border-bottom: 1px solid var(--border);
+    color: var(--gold);
+    font-style: italic;
+  }
+
+  .skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+  }
+  .skill-pill {
+    padding: 0.5rem 1rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    font-size: 0.85rem;
+    color: var(--text);
+    transition: all 0.2s ease;
+  }
+  .skill-pill:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+    transform: translateY(-2px);
+  }
+
+  .cert-list {
+    display: grid;
+    gap: 0.7rem;
+  }
+  .cert-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 1rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 0.92rem;
+  }
+  .cert-item .year {
+    color: var(--gold);
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 0.9rem;
+  }
+
+  .resume-cta {
+    margin-top: 3rem;
+    text-align: center;
+    padding: 3rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+  }
+  .resume-cta h3 {
+    font-family: var(--display);
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin-bottom: 0.7rem;
+  }
+  .resume-cta p {
+    color: var(--text-muted);
+    margin-bottom: 1.8rem;
+  }
+
+  /* ============ CONTACT ============ */
+  .contact-wrap {
+    background: linear-gradient(135deg, var(--surface) 0%, var(--bg-soft) 100%);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    padding: 4rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .contact-wrap::before {
+    content: '';
+    position: absolute;
+    top: -50%; left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center, rgba(245, 185, 66, 0.08), transparent 40%);
+    pointer-events: none;
+  }
+
+  .contact-wrap h2 {
+    font-family: var(--display);
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 400;
+    margin-bottom: 1rem;
+    position: relative;
+  }
+  .contact-wrap h2 em { color: var(--gold); font-weight: 300; }
+
+  .contact-wrap p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    margin-bottom: 2.5rem;
+    max-width: 540px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+  }
+
+  .contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    position: relative;
+  }
+
+  .contact-detail {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+    position: relative;
+  }
+  .contact-detail a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
+  }
+  .contact-detail a:hover { color: var(--gold); }
+
+  /* ============ FOOTER ============ */
+  footer {
+    padding: 3rem 0 2rem;
+    border-top: 1px solid var(--border);
+    text-align: center;
+    color: var(--text-dim);
+    font-size: 0.85rem;
+    position: relative;
+    z-index: 1;
+  }
+  footer span { color: var(--gold); }
+
+  /* ============ SCROLL REVEAL ============ */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .reveal.in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ============ RESPONSIVE ============ */
+  @media (max-width: 900px) {
+    .nav-toggle { display: block; }
+    .nav-links {
+      position: absolute;
+      top: 100%; left: 0; right: 0;
+      flex-direction: column;
+      background: rgba(11, 10, 8, 0.98);
+      backdrop-filter: blur(20px);
+      padding: 1rem;
+      gap: 0.3rem;
+      border-bottom: 1px solid var(--border);
+      transform: translateY(-10px);
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.25s ease;
+    }
+    .nav-links.open {
+      transform: translateY(0);
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .nav-links a { display: block; }
+
+    .about-grid,
+    .resume-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+
+    .insights-grid { grid-template-columns: 1fr; }
+
+    .project-card {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+    .project-tags {
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: flex-start;
+    }
+
+    .container { padding: 0 1.25rem; }
+    section { padding: 4rem 0; }
+    .hero { padding: 7rem 0 3rem; }
+    .hero-meta { gap: 1.5rem; margin-top: 2.5rem; }
+    .contact-wrap { padding: 2.5rem 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ NAVIGATION ============ -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#home" class="nav-logo">Newton<span>.</span></a>
+    <button class="nav-toggle" aria-label="Toggle menu">☰</button>
+    <ul class="nav-links">
+      <li><a href="#home" class="active">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#insights">Insights</a></li>
+      <li><a href="#resume">Resume</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ============ HOME / HERO ============ -->
+<section id="home" class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-eyebrow">Hamden, Connecticut · Available Now</div>
+      <h1>Newton Mugambi <span class="italic">Mwirebua</span></h1>
+      <p class="hero-subtitle">
+        <strong>MBA Graduate · Experienced</strong> Project &amp; Operations Analyst.
+        Bridging environmental science, data analysis, and project management
+        to deliver measurable outcomes for cross-functional teams.
+      </p>
+      <div class="hero-cta">
+        <a href="#projects" class="btn btn-primary">View My Work →</a>
+        <a href="#resume" class="btn btn-ghost">↓ Download Resume</a>
+      </div>
+      <div class="hero-meta">
+        <div class="hero-meta-item">
+          <div class="label">Current</div>
+          <div class="value">MBA · Quinnipiac</div>
+        </div>
+        <div class="hero-meta-item">
+          <div class="label">GPA</div>
+          <div class="value">3.96 / 4.00</div>
+        </div>
+        <div class="hero-meta-item">
+          <div class="label">Affiliation</div>
+          <div class="value">PMI Member</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section id="about">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="section-eyebrow">About</div>
+      <h2 class="section-title">A results-driven <em>analyst</em> with a global lens.</h2>
+      <p class="section-lead">From ecological fieldwork in Kenya to MBA classrooms in Connecticut, my path has been shaped by curiosity, rigor, and a commitment to doing useful work.</p>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <p>I'm an MBA candidate at Quinnipiac University and an Environmental Science graduate of Kenyatta University in Nairobi. My background sits at the intersection of project coordination, data-driven analysis, and operational improvement — and I'm passionate about applying these skills to healthcare innovation, sustainability, and emerging-tech initiatives.</p>
+        <p>I bring hands-on experience supporting cross-functional teams: collecting and analyzing data, building scheduling tools, designing project plans, and translating findings into clear stakeholder communication. I'm highly proficient in Microsoft Excel, Word, Teams, and SharePoint, and I'm continually expanding my technical toolkit through certifications in AI, machine learning, and Python.</p>
+        <p>Detail-oriented by nature and collaborative by design, I'm eager to contribute to PMO environments where structured project support and continuous improvement matter.</p>
+      </div>
+
+      <div class="about-card reveal">
+        <h3>Quick Facts</h3>
+        <ul>
+          <li><span class="k">Location</span><span class="v">Hamden, CT</span></li>
+          <li><span class="k">Degree</span><span class="v">MBA (Dec 2026)</span></li>
+          <li><span class="k">GPA</span><span class="v">3.96 / 4.00</span></li>
+          <li><span class="k">Undergrad</span><span class="v">B.S. Environmental Science</span></li>
+          <li><span class="k">Languages</span><span class="v">English, Swahili</span></li>
+          <li><span class="k">Focus</span><span class="v">PMO · Ops · Analytics</span></li>
+          <li><span class="k">Open To</span><span class="v">Full-time roles</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROJECTS / EXPERIENCE ============ -->
+<section id="projects">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="section-eyebrow">Projects &amp; Experience</div>
+      <h2 class="section-title">Where I've put the <em>work</em> in.</h2>
+      <p class="section-lead">A selection of roles and projects that have sharpened my approach to operations, project planning, and analysis.</p>
+    </div>
+
+    <div class="timeline">
+
+      <div class="project-card reveal">
+        <div class="project-period">Aug 2025 — Present</div>
+        <div class="project-body">
+          <h3>Operations &amp; Business Analyst</h3>
+          <div class="org">Quinnipiac University · Graduate Assistant</div>
+          <ul>
+            <li>Support business analysis and operational projects to improve efficiency and student experience</li>
+            <li>Collect, organize, and analyze data for decision-making and reporting</li>
+            <li>Develop scheduling tools and reports supporting academic operations</li>
+          </ul>
+        </div>
+        <div class="project-tags">
+          <span class="tag">Operations</span>
+          <span class="tag">Analytics</span>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-period">Jan 2025 — Apr 2025</div>
+        <div class="project-body">
+          <h3>Project Planner</h3>
+          <div class="org">Quinnipiac University · Sustainable Waste Management Initiative</div>
+          <ul>
+            <li>Designed an end-to-end project plan covering scope, schedule, and stakeholder mapping</li>
+            <li>Applied project management principles to budgeting, execution, and risk mitigation</li>
+            <li>Ensured alignment with university sustainability goals and reporting standards</li>
+          </ul>
+        </div>
+        <div class="project-tags">
+          <span class="tag">PMO</span>
+          <span class="tag">Sustainability</span>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-period">Jan 2022 — Dec 2024</div>
+        <div class="project-body">
+          <h3>Business Research / Project Consultant</h3>
+          <div class="org">Sapama Technologies</div>
+          <ul>
+            <li>Conducted in-depth analysis that contributed to a 25% improvement in project outcomes</li>
+            <li>Delivered reports and presentations with clear, actionable insights for leadership</li>
+            <li>Interpreted large datasets to surface trends informing environmental management solutions</li>
+          </ul>
+        </div>
+        <div class="project-tags">
+          <span class="tag">Consulting</span>
+          <span class="tag">Research</span>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-period">Oct — Dec 2021</div>
+        <div class="project-body">
+          <h3>Ecological Research Assistant</h3>
+          <div class="org">National Museums of Kenya</div>
+          <ul>
+            <li>Assisted with plant identification, biodiversity documentation, and field reporting</li>
+            <li>Contributed to peer-reviewed research workflows and data validation</li>
+          </ul>
+        </div>
+        <div class="project-tags">
+          <span class="tag">Field Work</span>
+          <span class="tag">Biodiversity</span>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-period">Aug 2019</div>
+        <div class="project-body">
+          <h3>Survey Enumerator</h3>
+          <div class="org">Kenya National Bureau of Statistics</div>
+          <ul>
+            <li>Collected and verified demographic and economic data with 100% accuracy</li>
+            <li>Engaged respondents across diverse communities under tight timelines</li>
+          </ul>
+        </div>
+        <div class="project-tags">
+          <span class="tag">Data Collection</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ RESEARCH ============ -->
+<section id="research">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="section-eyebrow">Research</div>
+      <h2 class="section-title">Asking <em>better</em> questions.</h2>
+      <p class="section-lead">Research has been a thread through every chapter of my career — environmental, business, and now operational. A few highlights:</p>
+    </div>
+
+    <div class="research-grid">
+      <div class="research-card reveal">
+        <div class="icon">⚙</div>
+        <h3>Sustainable Waste Management</h3>
+        <div class="meta">Quinnipiac University · 2025</div>
+        <p>Authored a comprehensive project plan for a campus-scale sustainability initiative — including budget, risk register, and stakeholder map — applied directly against PMI principles.</p>
+      </div>
+
+      <div class="research-card reveal">
+        <div class="icon">↗</div>
+        <h3>Environmental Data Trends</h3>
+        <div class="meta">Sapama Technologies · 2022–2024</div>
+        <p>Multi-year analytical engagements interpreting large datasets to surface trend insights that drove a 25% improvement in client project outcomes across environmental management programs.</p>
+      </div>
+
+      <div class="research-card reveal">
+        <div class="icon">✱</div>
+        <h3>Biodiversity Documentation</h3>
+        <div class="meta">National Museums of Kenya · 2021</div>
+        <p>Field-based plant identification and biodiversity record-keeping contributing to ecological research databases — sharpening my eye for accuracy and methodical documentation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ INSIGHTS ============ -->
+<section id="insights">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="section-eyebrow">Insights</div>
+      <h2 class="section-title">Three things I think <em>about</em> a lot.</h2>
+      <p class="section-lead">The intersections that shape how I approach work — and where I want to keep building.</p>
+    </div>
+
+    <div class="insights-grid">
+      <div class="insight-card reveal">
+        <div class="num">01</div>
+        <h3>Project Management as a Catalyst</h3>
+        <p>Good project management isn't paperwork — it's the difference between a great idea and a delivered outcome. I'm fascinated by how PMO structures unlock cross-functional teams.</p>
+      </div>
+
+      <div class="insight-card reveal">
+        <div class="num">02</div>
+        <h3>Data with a Conscience</h3>
+        <p>Coming from environmental science, I've seen what happens when decisions ignore data — and when they're trapped in it. I aim for analysis that's rigorous and humane.</p>
+      </div>
+
+      <div class="insight-card reveal">
+        <div class="num">03</div>
+        <h3>AI as a Daily Tool</h3>
+        <p>Through certifications in Google AI Essentials, Python, and Machine Learning, I'm learning to treat AI as a teammate — not a buzzword — for everyday operational improvement.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RESUME ============ -->
+<section id="resume">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="section-eyebrow">Resume</div>
+      <h2 class="section-title">Education, skills &amp; <em>credentials</em>.</h2>
+    </div>
+
+    <div class="resume-grid">
+
+      <div class="resume-block reveal">
+        <h3>Education</h3>
+        <div class="cert-list">
+          <div class="cert-item">
+            <div>
+              <strong>Master of Business Administration</strong><br>
+              <span style="color: var(--text-muted); font-size: 0.85rem;">Quinnipiac University · GPA 3.96</span>
+            </div>
+            <span class="year">Dec 2026</span>
+          </div>
+          <div class="cert-item">
+            <div>
+              <strong>B.S. Environmental Science</strong><br>
+              <span style="color: var(--text-muted); font-size: 0.85rem;">Kenyatta University · GPA 3.75</span>
+            </div>
+            <span class="year">Aug 2021</span>
+          </div>
+        </div>
+
+        <h3 style="margin-top: 2.5rem;">Affiliations</h3>
+        <div class="cert-list">
+          <div class="cert-item">
+            <div>
+              <strong>Project Management Institute</strong><br>
+              <span style="color: var(--text-muted); font-size: 0.85rem;">Southern New England Chapter · Member</span>
+            </div>
+            <span class="year">2025–26</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="resume-block reveal">
+        <h3>Core Skills</h3>
+        <div class="skills-list">
+          <span class="skill-pill">Project Coordination</span>
+          <span class="skill-pill">Documentation</span>
+          <span class="skill-pill">Excel</span>
+          <span class="skill-pill">Word</span>
+          <span class="skill-pill">Teams</span>
+          <span class="skill-pill">SharePoint</span>
+          <span class="skill-pill">Stakeholder Collaboration</span>
+          <span class="skill-pill">Process Review</span>
+          <span class="skill-pill">Workflow Improvement</span>
+          <span class="skill-pill">Data Analysis</span>
+          <span class="skill-pill">Reporting</span>
+          <span class="skill-pill">Project Scheduling</span>
+          <span class="skill-pill">Risk Tracking</span>
+          <span class="skill-pill">Research</span>
+          <span class="skill-pill">Proposal Development</span>
+        </div>
+
+        <h3 style="margin-top: 2.5rem;">Certifications</h3>
+        <div class="cert-list">
+          <div class="cert-item"><span>Machine Learning Professional</span><span class="year">2026</span></div>
+          <div class="cert-item"><span>AI for All</span><span class="year">2026</span></div>
+          <div class="cert-item"><span>Google AI Essentials</span><span class="year">2025</span></div>
+          <div class="cert-item"><span>Google Prompting Essentials</span><span class="year">2025</span></div>
+          <div class="cert-item"><span>Python Basic</span><span class="year">2025</span></div>
+          <div class="cert-item"><span>Problem Solving Using AI</span><span class="year">2025</span></div>
+          <div class="cert-item"><span>Leadership Certificate</span><span class="year">2021</span></div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="resume-cta reveal">
+      <h3>Want the full picture?</h3>
+      <p>Download the complete CV for printable detail, or reach out directly.</p>
+      <!-- IMPORTANT: Replace the href below with the link to your actual hosted CV PDF -->
+      <a href="resume.pdf" download class="btn btn-primary">↓ Download Resume (PDF)</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-wrap reveal">
+      <h2>Let's <em>talk</em>.</h2>
+      <p>I'm actively exploring full-time opportunities in PMO, operations, and analytics. If our paths might cross, I'd love to hear from you.</p>
+      <div class="contact-links">
+        <a href="mailto:Nmwirebua15@gmail.com" class="btn btn-primary">✉ Email Me</a>
+        <a href="https://www.linkedin.com/in/newton-mwirebua/" target="_blank" rel="noopener" class="btn btn-ghost">in / LinkedIn</a>
+      </div>
+      <div class="contact-detail">
+        <a href="mailto:Nmwirebua15@gmail.com">Nmwirebua15@gmail.com</a>
+        <a href="tel:+12033900935">203-390-0935</a>
+        <a href="https://www.linkedin.com/in/newton-mwirebua/" target="_blank" rel="noopener">linkedin.com/in/newton-mwirebua</a>
+        <span style="color: var(--text-muted);">Hamden, CT</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    Designed &amp; built by Newton Mwirebua · <span>©</span> 2026
+  </div>
+</footer>
+
+<script>
+  // ===== Mobile menu toggle =====
+  const toggle = document.querySelector('.nav-toggle');
+  const links = document.querySelector('.nav-links');
+  toggle.addEventListener('click', () => links.classList.toggle('open'));
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    a.addEventListener('click', () => links.classList.remove('open'));
+  });
+
+  // ===== Scrollspy: highlight active nav item =====
+  const sections = document.querySelectorAll('section[id]');
+  const navAnchors = document.querySelectorAll('.nav-links a');
+
+  const setActive = () => {
+    const scrollPos = window.scrollY + 120;
+    let current = 'home';
+    sections.forEach(sec => {
+      if (scrollPos >= sec.offsetTop) current = sec.id;
+    });
+    navAnchors.forEach(a => {
+      a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+    });
+  };
+  window.addEventListener('scroll', setActive, { passive: true });
+  setActive();
+
+  // ===== Reveal-on-scroll =====
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('in-view');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
